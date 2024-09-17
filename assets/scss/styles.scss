@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap");
+
+$dark-cyan: hsl(158, 36%, 37%);
+$very-dark-cyan: hsl(158, 36%, 24%);
+$cream: hsl(30, 38%, 92%);
+$very-dark-blue: hsl(212, 21%, 14%);
+$dark-grayish-blue: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+$font-montserrat: "Montserrat", sans-serif;
+$font-fraunces: "Fraunces", serif;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+body {
+	background-color: $cream;
+	font-family: $font-montserrat;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	position: relative;
+}
+
+.product-card {
+	display: flex;
+	flex-direction: column;
+	max-width: 320px;
+	background-color: $white;
+	border-radius: 10px;
+	overflow: hidden;
+	width: 100%;
+
+	@media screen and (min-width: 600px) {
+		flex-direction: row;
+		max-width: 550px;
+	}
+
+	.product-image-wrapper {
+		@media screen and (min-width: 600px) {
+			width: 50%;
+		}
+	}
+
+	.product-image {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		object-fit: contain;
+		@media screen and (min-width: 600px) {
+			object-fit: cover;
+		}
+	}
+
+	.product-info {
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		@media screen and (min-width: 600px) {
+			justify-content: space-between;
+			width: 50%;
+		}
+	}
+
+	.product-category {
+		text-transform: uppercase;
+		font-size: clamp(12px, 2vw, 14px);
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		color: $dark-grayish-blue;
+	}
+
+	.product-title {
+		font-family: $font-fraunces;
+		font-size: clamp(26px, 3vw, 32px);
+		font-weight: 700;
+		color: $very-dark-blue;
+	}
+
+	.product-description {
+		font-size: clamp(14px, 2vw, 15px);
+		color: $dark-grayish-blue;
+	}
+
+	.product-prices {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		font-family: $font-fraunces;
+		font-size: 28px;
+		font-weight: 700;
+		color: $dark-cyan;
+		& .product-old-price {
+			font-size: 14px;
+			font-weight: 500;
+			color: $dark-grayish-blue;
+			text-decoration: line-through;
+		}
+	}
+
+	.btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 50px;
+		background-color: $dark-cyan;
+		color: $white;
+		font-family: $font-montserrat;
+		font-size: 14px;
+		font-weight: 700;
+		border: none;
+		transition: background-color 0.3s ease;
+		border-radius: 10px;
+		cursor: pointer;
+		&:hover {
+			background-color: $very-dark-cyan;
+		}
+	}
+}
+.attribution {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	background-color: $dark-cyan;
+	color: $white;
+	font-size: 11px;
+	text-align: center;
+	a {
+		color: $white;
+
+		&:hover {
+			color: $cream;
+			text-decoration: none;
+		}
+	}
+}
